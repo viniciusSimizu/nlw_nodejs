@@ -1,0 +1,49 @@
+{
+  "name": "NodeJS",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=DEVELOPMENT ts-node-dev src/server.ts",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "start": "ts-node src/index.ts",
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/database",
+    "migration:show": "npm run typeorm migration:show -- -d src/database/index.ts",
+    "migration:create": "npm run typeorm migration:create -n",
+    "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/database",
+    "test": "NODE_ENV=TEST jest",
+    "test:e2e": "jest --config jest-e2e.config.ts"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.177",
+    "@swc/jest": "^0.2.20",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.0",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^16.11.10",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "dotenv": "^16.0.0",
+    "jest": "^28.1.0",
+    "supertest": "^6.2.3",
+    "ts-node": "10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "4.5.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^7.5.1",
+    "class-transformer": "^0.5.1",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "pg": "^8.4.0",
+    "reflect-metadata": "^0.1.13",
+    "regenerator-runtime": "^0.13.9",
+    "sqlite3": "^5.0.6",
+    "typeorm": "0.3.6",
+    "uuid": "^8.3.2"
+  }
+}
